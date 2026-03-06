@@ -1,0 +1,59 @@
+# --- Core do WordPress ---
+# É melhor instalar o WP do zero no servidor ou via Composer
+index.php
+license.txt
+readme.html
+wp-activate.php
+wp-blog-header.php
+wp-comments-post.php
+wp-config-sample.php
+wp-cron.php
+wp-links-opml.php
+wp-load.php
+wp-login.php
+wp-mail.php
+wp-settings.php
+wp-signup.php
+wp-trackback.php
+xmlrpc.php
+wp-admin/
+wp-includes/
+
+# --- Configurações Sensíveis ---
+# NUNCA suba suas senhas de banco de dados
+wp-config.php
+.htaccess
+sitemap.xml
+sitemap.xml.gz
+
+# --- Conteúdo (wp-content) ---
+# Ignoramos quase tudo, exceto o que você cria
+wp-content/advanced-cache.php
+wp-content/backup-db/
+wp-content/backups/
+wp-content/blogs.dir/
+wp-content/cache/
+wp-content/upgrade/
+wp-content/uploads/
+wp-content/wflogs/
+wp-content/object-cache.php
+
+# Ignorar plugins (geralmente instalados via painel ou WP-CLI)
+wp-content/plugins/*
+# Se quiser versionar um plugin específico, use: !wp-content/plugins/meu-plugin-proprio/
+
+# Ignorar temas padrão
+wp-content/themes/twenty*/
+
+# --- Logs e Temporários ---
+*.log
+wp-content/*.log
+wp-content/debug.log
+
+# --- Ferramentas de Desenvolvimento ---
+.DS_Store
+Thumbs.db
+node_modules/
+.env
+.npm
+.eslintcache
