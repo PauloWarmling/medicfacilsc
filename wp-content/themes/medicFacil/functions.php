@@ -59,21 +59,43 @@ function meu_tema_enqueue_styles() {
 add_action('wp_enqueue_scripts', 'meu_tema_enqueue_styles');
 
 function carregar_scripts_tema() {
-    // ✅ AOS & Intl-Tel JS
+    // 1. LIBS EXTERNAS (CDNs)
     wp_enqueue_script('aos-js', 'https://unpkg.com/aos@2.3.1/dist/aos.js', [], '2.3.1', true);
     wp_enqueue_script('intl-tel-js', 'https://cdn.jsdelivr.net/npm/intl-tel-input@26.7.6/build/js/intlTelInput.min.js', [], '26.7.6', true);
     wp_enqueue_script('intl-tel-utils', 'https://cdn.jsdelivr.net/npm/intl-tel-input@26.7.6/build/js/utils.js', [], '26.7.6', true);
-
-    // ✅ Swiper JS
     wp_enqueue_script('swiper-js', 'https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js', [], '11.0.0', true);
-    // ✅ Seu JS principal (Agora dependente de AOS, Intl-Tel e Swiper)
+
+    // 2. SCRIPT GLOBAL (Menu Mobile + Inicializações Gerais)
+    // Ele depende apenas das libs externas
     wp_enqueue_script(
-        'meu-script',
-        get_template_directory_uri() . '/assets/js/script.js',
+        'meu-script-global', 
+        get_template_directory_uri() . '/assets/js/script.js', 
         array('aos-js', 'intl-tel-js', 'swiper-js'), 
-        '1.2', // Versão atualizada para forçar refresh de cache
+        '1.2', 
         true
     );
+
+    // 3. HOME (Lógica específica da Home)
+    if ( is_front_page() || is_home() ) {
+        wp_enqueue_script(
+            'meu-script-home', 
+            get_template_directory_uri() . '/assets/js/home.js', 
+            array('meu-script-global'), // Depende do global para garantir ordem
+            '1.0', 
+            true
+        );
+    }
+
+    // 4. EMPRESA (Lógica específica da página Empresa)
+    if ( is_page('empresa') ) {
+        wp_enqueue_script(
+            'meu-script-empresa', 
+            get_template_directory_uri() . '/assets/js/empresa.js', 
+            array('meu-script-global'), 
+            '1.0', 
+            true
+        );
+    }
 }
 add_action('wp_enqueue_scripts', 'carregar_scripts_tema');
 
