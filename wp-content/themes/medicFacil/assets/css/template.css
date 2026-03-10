@@ -1,0 +1,86 @@
+/* ------------------------------
+   RESET / NORMALIZE
+------------------------------ */
+
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --primary-color: #651695;
+  --secondary-color: #FE06AE;
+  --gradient: linear-gradient(180deg, #651695 0%, #9A40D1 100%);
+  --gradient2: linear-gradient(180deg, #8527BE  0%, #651695 100%);
+  --gradient3: linear-gradient(90deg, #F2295B 0%, #651695 100%);
+  --font: 'Inter';
+  --white: #fff;
+}
+
+body {
+    font-family: var(--font);
+}
+
+/* ------------------------------
+   LAYOUT / CONTAINERS
+------------------------------ */
+
+section, main {
+    overflow-x: hidden;
+}
+
+.container {
+  width: 1140px;
+  max-width: 100%;
+  margin: 0 auto;
+  max-height: 100%;
+}
+
+.left-right-container {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  max-width: 100%;
+  gap: 50px;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+.left-right-container .right, .left-right-container .left {
+  width: calc(50% - 50px);
+}
+
+.hidden {
+    display: none;
+}
+
+/* ------------------------------
+    NAVEGAÇÃO
+------------------------------ */
+
+/* Largura da scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Fundo da scrollbar */
+::-webkit-scrollbar-track {
+  background: var(--gradient2);
+}
+
+/* Barra que desliza */
+::-webkit-scrollbar-thumb {
+  background: var(--gradient3);
+  border-radius: 10px;
+}
+
+/* Ao passar o mouse */
+::-webkit-scrollbar-thumb:hover {
+  background: var(--secondary-color);
+}
+
+@media (max-width: 1024px) {
+    .container {
+        padding: 0 20px !important;
+    }
+}

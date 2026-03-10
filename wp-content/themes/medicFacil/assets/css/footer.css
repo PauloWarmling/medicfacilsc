@@ -1,0 +1,57 @@
+footer {
+    padding: 30px 0;
+    background-color: #E6E6E6;
+    margin-top: 90px;
+}
+
+footer .left-right-container {
+    gap: 50px;
+}
+
+footer .left-right-container .left, footer .left-right-container .right  {
+    width: calc(50% - 50px);
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    font-size: 13px;
+    line-height: 1.55;
+}
+
+footer .left-right-container .right {
+    gap: 50px;
+}
+
+.left p, .right p {
+    width: 100%;
+}
+
+.right .email-wrapper, .right .telefone-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    transition: all .3s;
+
+}
+.right .email-wrapper:hover, .right .telefone-wrapper:hover {
+    transform: scale(1.1);
+    transition: all .3s;
+}
+
+.right .wrapper-email-wrapper, .right .wrapper-telefone-wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+}
+
+.right .email-wrapper .email, .right .telefone-wrapper .telefone {
+    color: #651695;
+    font-size: 15px;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.right svg {
+    width: 25px;
+    height: 25px;
+    fill: #651695;
+}
