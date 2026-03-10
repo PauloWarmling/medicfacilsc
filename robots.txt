@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://medicfacilsc.com.br/sitemap.xml

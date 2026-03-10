@@ -1,0 +1,84 @@
+# ========================
+# WORDPRESS CORE
+# ========================
+
+license.txt
+readme.html
+
+wp-admin/
+wp-includes/
+
+wp-activate.php
+wp-blog-header.php
+wp-comments-post.php
+wp-cron.php
+wp-links-opml.php
+wp-load.php
+wp-login.php
+wp-mail.php
+wp-settings.php
+wp-signup.php
+wp-trackback.php
+xmlrpc.php
+
+# ========================
+# CONFIGURAÇÃO
+# ========================
+
+wp-config.php
+.htaccess
+.env
+
+# ========================
+# SERVIDOR
+# ========================
+
+litespeed.conf
+google*.html
+
+# ========================
+# UPLOADS
+# ========================
+
+wp-content/uploads/
+
+# ========================
+# CACHE / BACKUPS
+# ========================
+
+wp-content/cache/
+wp-content/backups/
+wp-content/upgrade/
+wp-content/wflogs/
+
+# ========================
+# LOGS
+# ========================
+
+*.log
+wp-content/debug.log
+
+# ========================
+# PLUGINS
+# ========================
+
+wp-content/plugins/*
+wp-content/languages/
+
+# se tiver plugin próprio
+#!wp-content/plugins/meu-plugin/
+
+# ========================
+# TEMAS PADRÃO
+# ========================
+
+wp-content/themes/twenty*
+
+# ========================
+# DEV
+# ========================
+
+node_modules/
+.DS_Store
+Thumbs.db
+.eslintcache
